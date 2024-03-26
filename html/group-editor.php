@@ -356,11 +356,11 @@ session_write_close();
             <div class="container">
                 <div class="toolbar">
                     <div class="head">
-                        <input type="text" placeholder="Filename" value=<?php if (isset ($id)) {
+                        <input type="text" placeholder="Filename" value='<?php if (isset ($id)) {
                             echo substr($id, 0, -4);
                         } else {
                             echo "untitled";
-                        } ?> id="filename">
+                        } ?> ' id="filename">
                         <select onchange='fileHandle(this.value,<?php echo "$groupid,$split" ?> ); this.selectedIndex=0'>
                             <option value="" selected="" hidden="" disabled="">File</option>
                             <option value="new">New file</option>
