@@ -33,16 +33,13 @@ function deleteFolder($folderPath) {
 
 if($merge == "A"){
 if (deleteFolder($folderPathB)) {
-    echo "Folder '$folderPathB' deleted successfully.";
     pg_prepare($conn, "delete_split", "DELETE FROM splitfiles WHERE groupid=$1");
     pg_execute($conn, "delete_split", array($groupid));
         
 } else {
-    echo "Failed to delete folder '$folderPathB'.";
 }
 } else{
     if (deleteFolder($folderPathA)) {
-        echo "Folder '$folderPathA' deleted successfully.";
         rename($folderPathB, $folderPathA);
         pg_query($conn, "DELETE FROM files WHERE groupid=$groupid");
         pg_prepare(
@@ -59,7 +56,6 @@ if (deleteFolder($folderPathB)) {
         pg_execute($conn, "replace_split", array($groupid));
             
     } else {
-        echo "Failed to delete folder '$folderPathB'.";
     }
 }
 
