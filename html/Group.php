@@ -419,14 +419,16 @@ $username = $_SESSION["username"];
                         }
                     }
                 }
-            } ?>
+            
+               echo '</bside>
+                <a href="../html/friends.php">
+                    <h4 class="viewMore">View All</h4>
+                </a>
+                </section>
+                </bside>';
+                } ?>
 
-        </bside>
-        <a href="../html/friends.php">
-            <h4 class="viewMore">View All</h4>
-        </a>
-        </section>
-        </bside>
+        
 
 
 

@@ -27,3 +27,7 @@ $group = $_SESSION['groupid']; // Using session variable directly
 $stmt = pg_prepare($conn, "members", "INSERT INTO accountToGroup (username, groupID) VALUES ($1, $2)");
 $result = pg_execute($conn, "members", array($name, $group)); // Using $result instead of $result2
 
+if(!$result){
+    echo pg_last_error();
+}
+
