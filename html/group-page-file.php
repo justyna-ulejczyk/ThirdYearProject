@@ -14,7 +14,7 @@ $groupname = $_SESSION["groupname"];
 session_write_close();
 
 if (!isset ($_GET["split"])) {
-    header("location: " . "./group-page-file.php?split=0");
+ header("location: " . "./group-page-file.php?split=0");
 }
 
 $split = $_GET["split"];
@@ -374,7 +374,7 @@ $checkSplitRow = pg_fetch_assoc($checkSplitRESULT);
                         <div>
                             <label for="fileName">File Name: </label>
                             <input type="text" name="fileName" required>
-                            <input type="hidden" name="split" value=<?php echo "$split" ?>>
+                            <input type="hidden" name="split" value="<?php echo "$split" ?>">
                         </div>
                         <br>
                         <div>
