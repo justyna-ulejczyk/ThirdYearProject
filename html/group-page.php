@@ -341,7 +341,7 @@ session_write_close();
                             <img src='../profile_pic/profile_pic_$login_username.png' alt=''>";
                             echo "<span>$sender</span></div>
                             <div><br>$text</div>
-                            <a href='../php/delete_groupPost.php?mg=$messageid'> delete </a>
+                            <a href='../php/delete_groupPost.php?mg=$messageid'>  <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> </a>
                         
                         </div>";
                         }

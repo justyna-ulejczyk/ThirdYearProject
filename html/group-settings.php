@@ -295,7 +295,7 @@ session_write_close();
 
     <!-- Left Side Bar for Options of what to do -->
     <section class="body">
-        <aside class="left-bar">
+        <aside class="left-bar" >
             <button class="menu-button">Menu</button>
             <ul>
                 <a href="group-page.php">
@@ -321,7 +321,7 @@ session_write_close();
 
         <!-- Feed -->
         <feed>
-            <div class="setting">
+            <div class="setting" >
                 <div class='settings-title'>
                     <span>Settings</span>
                     <span>
@@ -341,7 +341,7 @@ session_write_close();
                         <input type="radio" id="tab5" name="tab">
                         <label for="tab5">Delete Group</label>
                     </div>
-                    <div class='settings-tab'>
+                    <div class='settings-tab' style="border-left:10px solid white">
                         <article>
                             <div class="wrapper">
                                 <h2>Change Name</h2>

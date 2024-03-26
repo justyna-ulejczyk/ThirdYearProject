@@ -47,9 +47,9 @@ function copyFolder($source, $destination, $conn) {
 }
 
 if (copyFolder($folderPathA, $folderPathB, $conn)) {
-    echo "Contents of '$folderPathA' copied to '$folderPathB' successfully.";
+    //echo "Contents of '$folderPathA' copied to '$folderPathB' successfully.";
+    header("location: " . "../html/group-page-file.php?split=0");
 } else {
     echo "Failed to copy contents of '$folderPathA' to '$folderPathB'.";
 }
 
-header("location: " . "../html/group-page-file.php?split=0");

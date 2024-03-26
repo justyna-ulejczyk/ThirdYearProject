@@ -92,6 +92,7 @@ input[type="radio"] {
     width: 100%;
     height: 100%;
     display: flex;
+    border: 10px solid var(--foreground);
 }
 
 article {
@@ -242,6 +243,7 @@ input[type="submit"].change-group-name {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    
 }
 
 @media screen and (max-width: 1000px) {
@@ -295,4 +297,8 @@ input[type="submit"].change-group-name {
         display: block;
         padding: 16px 8px 8px 8px;
     }
+}
+
+#bart{
+    border-right: solid var(--foreground) 1px;
 }
