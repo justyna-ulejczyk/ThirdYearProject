@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once "connect_db.php";
 session_start();
 $groupid = $_SESSION["groupid"];
@@ -10,11 +14,11 @@ if (!file_exists($folderPathB)) {
     if (!mkdir($folderPathB, 0777, true)) {
         die('Failed to create folders...');
     }
-} else {
 }
 
 $insert_filesSTMT = pg_prepare($conn, "insert_files", "INSERT INTO splitfiles (groupid, filename, filetype) VALUES ($1, $2,$3)");
 pg_query($conn, "UPDATE groups SET hassplit = 1 WHERE groupid=$groupid");
+
 function copyFolder($source, $destination, $conn) {
     $groupid = $_SESSION["groupid"];
     if (!is_dir($source)) {
@@ -45,8 +49,13 @@ function copyFolder($source, $destination, $conn) {
 }
 
 if (copyFolder($folderPathA, $folderPathB, $conn)) {
-    //echo "Contents of '$folderPathA' copied to '$folderPathB' successfully.";
-    header("location: " . "sharesyncbitbybit.azurewebsites.net/html/group-page-file.php?split=0");
+    // Debugging: Echo a message to see if this block is executed
+    echo "Files copied successfully.";
+    
+    // Make sure there are no outputs before the header call
+    header("Location: ../html/group-page-file.php?split=0");
+    exit; // Ensure no further code execution after redirection
 } else {
+    echo "Failed to copy files."; // Debugging: Echo a message to see if this block is executed
 }
-
+?>
