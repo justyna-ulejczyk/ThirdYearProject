@@ -427,6 +427,21 @@ if (isset($_GET["image"]) && $split==1){
     $base64Image = base64_encode($imageData);
 }
 
-
+echo "<script>
+var imageData = '$base64Image';
+console.log(imageData);
+var img = new Image();
+img.src = 'data:image/jpeg;base64,' + imageData;
+img.onload = function() {
+    // Clear any existing content
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Draw the new image
+    const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+    const x = (canvas.width / 2) - (img.width / 2) * scale;
+    const y = (canvas.height / 2) - (img.height / 2) * scale;
+    ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+    // Now the image is the background, any new drawing will be on top
+}
+</script>";
 
 ?>
