@@ -10,9 +10,7 @@ if (!file_exists($folderPathB)) {
     if (!mkdir($folderPathB, 0777, true)) {
         die('Failed to create folders...');
     }
-    echo "Folder created successfully!";
 } else {
-    echo "Folder already exists!";
 }
 
 $insert_filesSTMT = pg_prepare($conn, "insert_files", "INSERT INTO splitfiles (groupid, filename, filetype) VALUES ($1, $2,$3)");
@@ -50,6 +48,5 @@ if (copyFolder($folderPathA, $folderPathB, $conn)) {
     //echo "Contents of '$folderPathA' copied to '$folderPathB' successfully.";
     header("location: " . "../html/group-page-file.php?split=0");
 } else {
-    echo "Failed to copy contents of '$folderPathA' to '$folderPathB'.";
 }
 
