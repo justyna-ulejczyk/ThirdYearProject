@@ -304,8 +304,14 @@ session_write_close();
                 <a href="group-page-file.php">
                     <li>Files</li>
                 </a>
-                <a href="http://167.172.51.195:8000/">
+                <a href="http://167.172.51.195:8000/" id='openNewPage'>
                     <li>Meetings</li>
+                    <script>
+    document.getElementById("openNewPage").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default behavior of anchor tag
+      window.open("http://167.172.51.195:8000/", "_blank"); // Open link in new tab/window
+    });
+  </script>
                 </a>
                 <a href="group-settings.php">
                     <li>
