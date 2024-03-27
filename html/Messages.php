@@ -85,7 +85,7 @@ if (isset ($_GET['id'])) {
             <script>
                 function submitForm(event) {
                     var searchWord = document.getElementById("searchInput").value;
-                    var regex = /[;'"\]/;
+                    const regex =  new RegExp(/[;\'\"\\]/);;
                     if (regex.test(searchWord)) {
                         alert("Invalid characters detected. Please remove special characters.");
                         event.preventDefault();

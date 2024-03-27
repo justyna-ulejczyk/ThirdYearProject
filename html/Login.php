@@ -51,11 +51,10 @@
                     </div>
                 </div>
                 <div>
-                    <a href="update_password.php">Forgot password?</a>
                     <div class="option2">
                         <p>New to this website? </p>
                         <a class="to-signup-change-screen">Sign Up</a>
-                    </div>
+                    </div>    
                 </div>
             </div>
             <div>

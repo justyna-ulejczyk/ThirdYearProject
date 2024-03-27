@@ -43,4 +43,3 @@ pg_close($conn);
 
 header("Location: ../html/group-page.php");
 exit();
-?>
