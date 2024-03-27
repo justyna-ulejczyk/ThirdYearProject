@@ -59,11 +59,7 @@ function fileHandle(value, groupid, split) {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                if (xhr.responseText == "success") {
-                    console.log("file saved");
-                } else {
-                    console.log(xhr.responseText);
-                }
+                window.alert("file saved!");
             }
         };
         xhr.send("filename=" + filename.value + "&content=" + content.innerHTML + "&groupid=" + groupid + "&split=" + split);

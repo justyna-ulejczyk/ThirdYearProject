@@ -95,11 +95,7 @@ document.getElementById('save').addEventListener('click', function () {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            if (xhr.responseText == "success") {
-                console.log("file saved");
-            } else {
-                console.log(xhr.responseText);
-            }
+            window.alert("Canvas saved!")
         }
     };
     xhr.send(formData);
@@ -118,10 +114,7 @@ document.getElementById('delete').addEventListener('click', function () {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText);
-            //window.location.href = '../html/group-page-file.php';
-        } else {
-            console.log(xhr.responseText);
+            window.location.href = '../html/group-page-file.php';
         }
     };
     xhr.send(formData);
